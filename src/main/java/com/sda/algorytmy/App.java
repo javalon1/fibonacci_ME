@@ -1,21 +1,46 @@
 package com.sda.algorytmy;
 
+import java.util.Scanner;
+
 /**
  * Hello world!
  *
  */
-public class App 
-{
-    public static int fibonacci(int n){
-        if(n <= 2){
+public class App {
+
+    public static int fibonacci(int n) {
+        if (n <= 2) {
             return 1;
         }
-        return fibonacci(n-2+fibonacci(n-1));
+        return fibonacci(n - 2 + fibonacci(n - 1));
+    }
+
+    public static void fibonaci2() {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+
+        if (N < 2) {
+            System.out.println(N);
+        } else {
+            int A = 0;
+            int B = 1;
+            int C = 1;
+            int K = 2;
+
+            while (K < N) {
+                A = B;
+                B = C;
+                C = A + B;
+                K++;
+            }
+            System.out.println("Wynik: " +C);
+        }
     }
 
 
     public static void main( String[] args )
     {
+        fibonaci2();
         System.out.println(fibonacci(5));
 
         int tab[] = new int[20];
@@ -30,3 +55,5 @@ public class App
         }
     }
 }
+
+
