@@ -6,8 +6,18 @@ package com.sda.algorytmy;
  */
 public class App 
 {
+    public static int fibonacci(int n){
+        if(n <= 2){
+            return 1;
+        }
+        return fibonacci(n-2+fibonacci(n-1));
+    }
+
+
     public static void main( String[] args )
     {
+        System.out.println(fibonacci(5));
+
         int tab[] = new int[20];
         tab[0] = 0;
         tab[1] = 1;
@@ -17,10 +27,6 @@ public class App
 
 
             System.out.println(tab[i]);
-
-
         }
-
-
     }
 }
